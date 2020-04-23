@@ -6,6 +6,6 @@ p Hello! We are great at Rails
 
 = link_to 'home', action: 'index'
 
-= react_component("HelloWorld", { greeting: "Hello from react-rails." })
+= react_component("HelloWorld", { greeting: "Hello from react-rails.", info: { name: "react-rails" } }, { class: "hello-world" })
 
 = render 'footer'
