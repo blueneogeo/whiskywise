@@ -1,19 +1,46 @@
+// {
+//   "compilerOptions": {
+//     "declaration": false,
+//     "emitDecoratorMetadata": true,
+//     "experimentalDecorators": true,
+//     "lib": ["es6", "dom"],
+//     "module": "es6",
+//     "moduleResolution": "node",
+//     "sourceMap": true,
+//     "target": "es5",
+//     "jsx": "react"
+//   },
+//   "exclude": [
+//     "**/*.spec.ts",
+//     "node_modules",
+//     "vendor",
+//     "public"
+//   ],
+//   "compileOnSave": false
+// }
 {
   "compilerOptions": {
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": ["es6", "dom"],
+    "lib": [
+      "es6",
+      "dom"
+    ],
     "module": "es6",
     "moduleResolution": "node",
     "sourceMap": true,
     "target": "es5",
-    "jsx": "react"
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "strictNullChecks": true
   },
   "exclude": [
     "**/*.spec.ts",
     "node_modules",
-    "vendor",
     "public"
   ],
   "compileOnSave": false
