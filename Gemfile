@@ -5,9 +5,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.2'
 
-platform :x64_mingw_25 do
-  gem 'sorbet', :group => :development
-  gem 'sorbet-runtime'
+platform :ruby do
+  gem 'sorbet', '0.5.5560'
+  gem 'sorbet-runtime', '0.5.5560'
   # gem 'sorbet-static', '0.5.5519'
 end
 

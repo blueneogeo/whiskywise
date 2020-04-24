@@ -200,10 +200,12 @@ GEM
     slim (4.0.1)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
-    sorbet (0.4.4250)
+    sorbet (0.5.5560)
+      sorbet-static (= 0.5.5560)
     sorbet-rails (0.5.9.1)
       parlour (~> 1.0)
     sorbet-runtime (0.5.5560)
+    sorbet-static (0.5.5560-universal-darwin-14)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -269,9 +271,9 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   slim
-  sorbet
+  sorbet (= 0.5.5560)
   sorbet-rails
-  sorbet-runtime
+  sorbet-runtime (= 0.5.5560)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
