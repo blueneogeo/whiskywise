@@ -11,9 +11,9 @@ class PageController < ApplicationController
     @selfy = T.let(self, PageController)
   end
 
-  sig { returns(T.nilable(User)) }
+  # sig { returns(T.nilable(User)) }
   def index
-    User.find_by(name: 'test')
+    # User.find_by(name: 'test')
   end
 
   def about; end
