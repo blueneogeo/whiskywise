@@ -6,6 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.2'
 
 gem 'rubocop'
+gem 'solargraph', group: :development
 
 platform :ruby do
   gem 'sorbet', '0.5.5560'

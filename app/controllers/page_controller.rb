@@ -5,12 +5,16 @@
 class PageController < ApplicationController
   def initialize
     super
-    @users = %w[Roy Lukasz Christian]
-    @year = Time.now.year
-    @author = 'Christian'
+    @users = T.let(%w[Roy Lukasz Christian], T::Array[String])
+    @year = T.let(Time.now.year, Integer)
+    @author = T.let('Christian', String)
+    @selfy = T.let(self, PageController)
   end
 
-  def index; end
+  sig { returns(T.nilable(User)) }
+  def index
+    User.find_by(name: 'test')
+  end
 
   def about; end
 end
