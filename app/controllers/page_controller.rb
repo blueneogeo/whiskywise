@@ -8,7 +8,6 @@ class PageController < ApplicationController
     @users = %w[Roy Lukasz Christian]
     @year = Time.now.year
     @author = 'Christian'
-    @author += 1
   end
 
   def index; end
