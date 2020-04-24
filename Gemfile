@@ -5,6 +5,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.2'
 
+gem 'rubocop'
+
 platform :ruby do
   gem 'sorbet', '0.5.5560'
   gem 'sorbet-runtime', '0.5.5560'

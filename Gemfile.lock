@@ -58,6 +58,7 @@ GEM
       zeitwerk (~> 2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    ast (2.4.0)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -94,6 +95,8 @@ GEM
     highline (2.0.3)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
+    jaro_winkler (1.5.4)
+    jaro_winkler (1.5.4-java)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
     listen (3.1.5)
@@ -125,10 +128,13 @@ GEM
       mini_portile2 (~> 2.4.0)
     nokogiri (1.10.9-x86-mingw32)
       mini_portile2 (~> 2.4.0)
+    parallel (1.19.1)
     parlour (1.0.0)
       commander (~> 4.4.0)
       rainbow (~> 3.0.0)
       sorbet-runtime
+    parser (2.7.1.1)
+      ast (~> 2.4.0)
     pg (1.2.3)
     pg (1.2.3-x64-mingw32)
     pg (1.2.3-x86-mingw32)
@@ -180,6 +186,16 @@ GEM
       railties (>= 3.2)
       tilt
     regexp_parser (1.7.0)
+    rexml (3.2.4)
+    rubocop (0.82.0)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.7.0.1)
+      rainbow (>= 2.2.2, < 4.0)
+      rexml
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 2.0)
+    ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
@@ -229,6 +245,7 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2019.3)
       tzinfo (>= 1.0.0)
+    unicode-display_width (1.7.0)
     web-console (4.0.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -268,6 +285,7 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.2)
   react-rails
+  rubocop
   sass-rails (>= 6)
   selenium-webdriver
   slim
