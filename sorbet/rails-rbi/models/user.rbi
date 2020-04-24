@@ -10,6 +10,15 @@ end
 module User::GeneratedAttributeMethods
   extend T::Sig
 
+  sig { returns(T.nilable(Integer)) }
+  def age; end
+
+  sig { params(value: T.nilable(T.any(Integer, Float, ActiveSupport::Duration))).void }
+  def age=(value); end
+
+  sig { returns(T::Boolean) }
+  def age?; end
+
   sig { returns(ActiveSupport::TimeWithZone) }
   def created_at; end
 
@@ -19,6 +28,15 @@ module User::GeneratedAttributeMethods
   sig { returns(T::Boolean) }
   def created_at?; end
 
+  sig { returns(T.nilable(String)) }
+  def first_name; end
+
+  sig { params(value: T.nilable(String)).void }
+  def first_name=(value); end
+
+  sig { returns(T::Boolean) }
+  def first_name?; end
+
   sig { returns(Integer) }
   def id; end
 
@@ -27,6 +45,15 @@ module User::GeneratedAttributeMethods
 
   sig { returns(T::Boolean) }
   def id?; end
+
+  sig { returns(T.nilable(String)) }
+  def last_name; end
+
+  sig { params(value: T.nilable(String)).void }
+  def last_name=(value); end
+
+  sig { returns(T::Boolean) }
+  def last_name?; end
 
   sig { returns(ActiveSupport::TimeWithZone) }
   def updated_at; end

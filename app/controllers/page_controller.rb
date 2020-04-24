@@ -13,7 +13,8 @@ class PageController < ApplicationController
 
   # sig { returns(T.nilable(User)) }
   def index
-    User.find_by(name: 'test')
+    user_or_nil = User.find_by(name: 'test')
+    @first_name = user_or_nil.first_name unless user_or_nil.nil?
   end
 
   def about; end
