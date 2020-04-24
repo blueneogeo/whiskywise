@@ -1,12 +1,23 @@
 import React from "react";
-import PropTypes from "prop-types";
+import template from './HelloWorld.pug';
+import { boundMethod } from 'autobind-decorator'
 
 interface Props {
-  greeting: string
+  username: string
 }
 
 export default class HelloWorld extends React.Component<Props> {
   render() {
-    return `Greeting: ${this.props.greeting}`
+    console.log('passing username ', this.props.username)
+    return template({ username: this.props.username, onClick: this.onClick })
+    // return pug`
+    //   p hello world!!! {this.props.username}
+    // `
   }
+
+  @boundMethod
+  onClick(e: any) {
+    alert('Clicked!')
+  }
+
 }

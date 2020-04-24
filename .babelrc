@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    "transform-react-pug",
+    "@babel/transform-react-jsx",
+    [
+      "transform-jsx-classname-components",
+      {
+        "objects": [
+          "React"
+        ]
+      }
+    ]
+  ]
+}
