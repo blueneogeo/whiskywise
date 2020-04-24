@@ -7,6 +7,37 @@ module User::ActiveRelation_WhereNot
   def not(opts, *rest); end
 end
 
+module User::GeneratedAttributeMethods
+  extend T::Sig
+
+  sig { returns(ActiveSupport::TimeWithZone) }
+  def created_at; end
+
+  sig { params(value: T.any(DateTime, Date, Time, ActiveSupport::TimeWithZone)).void }
+  def created_at=(value); end
+
+  sig { returns(T::Boolean) }
+  def created_at?; end
+
+  sig { returns(Integer) }
+  def id; end
+
+  sig { params(value: T.any(Integer, Float, ActiveSupport::Duration)).void }
+  def id=(value); end
+
+  sig { returns(T::Boolean) }
+  def id?; end
+
+  sig { returns(ActiveSupport::TimeWithZone) }
+  def updated_at; end
+
+  sig { params(value: T.any(DateTime, Date, Time, ActiveSupport::TimeWithZone)).void }
+  def updated_at=(value); end
+
+  sig { returns(T::Boolean) }
+  def updated_at?; end
+end
+
 module User::CustomFinderMethods
   sig { params(limit: Integer).returns(T::Array[User]) }
   def first_n(limit); end
@@ -25,6 +56,7 @@ module User::CustomFinderMethods
 end
 
 class User < ApplicationRecord
+  include User::GeneratedAttributeMethods
   extend User::CustomFinderMethods
   extend T::Sig
   extend T::Generic

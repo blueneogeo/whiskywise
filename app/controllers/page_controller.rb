@@ -13,7 +13,7 @@ class PageController < ApplicationController
 
   # sig { returns(T.nilable(User)) }
   def index
-    # User.find_by(name: 'test')
+    User.find_by(name: 'test')
   end
 
   def about; end
