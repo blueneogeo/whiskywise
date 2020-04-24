@@ -5,6 +5,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.2'
 
+platform :x64_mingw_25 do
+  gem 'sorbet', :group => :development
+  gem 'sorbet-runtime'
+  # gem 'sorbet-static', '0.5.5519'
+end
+
+gem 'sorbet-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use postgresql as the database for Active Record
