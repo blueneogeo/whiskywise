@@ -2,6 +2,7 @@
   "name": "whiskywise",
   "private": true,
   "dependencies": {
+    "@babel/preset-typescript": "^7.9.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
@@ -15,19 +16,33 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "typescript": "^3.8.3",
+    "@babel/plugin-transform-react-jsx": "^7.9.4",
+    "@babel/preset-react": "^7.9.4",
     "@types/babel-plugin-react-pug": "^0.5.0",
     "@types/pug": "^2.0.4",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
-    "ts-loader": "^7.0.1",
-    "@babel/plugin-transform-react-jsx": "^7.9.4",
-    "@babel/preset-react": "^7.9.4",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "autobind-decorator": "^2.4.0",
     "babel-plugin-transform-jsx-classname-components": "^0.0.3",
     "babel-plugin-transform-react-pug": "^7.0.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "pug-as-jsx-loader": "^1.0.84",
-    "webpack-dev-server": "^3.10.3",
-    "autobind-decorator": "^2.4.0"
+    "ts-loader": "^7.0.1",
+    "typescript": "^3.8.3",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "babel": {
+    "plugins": [
+      "transform-react-pug",
+      "@babel/transform-react-jsx",
+      [
+        "transform-jsx-classname-components",
+        {
+          "objects": [
+            "React"
+          ]
+        }
+      ]
+    ]
   }
 }
