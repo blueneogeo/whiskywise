@@ -14,6 +14,20 @@ class ActionMailer::Base
 end
 
 module GeneratedUrlHelpers
+  # Sigs for route /
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def root_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def root_url(*args, **kwargs); end
+
+  # Sigs for route /about(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def about_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def about_url(*args, **kwargs); end
+
   # Sigs for route /users(.:format)
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def users_path(*args, **kwargs); end
@@ -28,33 +42,19 @@ module GeneratedUrlHelpers
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def new_user_url(*args, **kwargs); end
 
-  # Sigs for route /users/:id/edit(.:format)
+  # Sigs for route /login(.:format)
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def edit_user_path(*args, **kwargs); end
+  def login_path(*args, **kwargs); end
 
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def edit_user_url(*args, **kwargs); end
+  def login_url(*args, **kwargs); end
 
-  # Sigs for route /users/:id(.:format)
+  # Sigs for route /welcome(.:format)
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def user_path(*args, **kwargs); end
-
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def user_url(*args, **kwargs); end
-
-  # Sigs for route /
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def root_path(*args, **kwargs); end
+  def welcome_path(*args, **kwargs); end
 
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def root_url(*args, **kwargs); end
-
-  # Sigs for route /about(.:format)
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def about_path(*args, **kwargs); end
-
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def about_url(*args, **kwargs); end
+  def welcome_url(*args, **kwargs); end
 
   # Sigs for route /rails/action_mailbox/mandrill/inbound_emails(.:format)
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }

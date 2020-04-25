@@ -64,6 +64,7 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     backport (1.1.2)
+    bcrypt (3.1.13)
     benchmark (0.1.0)
     bindex (0.8.1)
     bootsnap (1.4.6)
@@ -297,6 +298,7 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
+  bcrypt
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)

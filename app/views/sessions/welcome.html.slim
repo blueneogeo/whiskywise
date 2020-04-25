@@ -1,0 +1,9 @@
+h1 Welcome
+
+= name
+/ - if logged_in?
+/   h1 You are logged in as
+/     = current_user.username
+
+= button_to "Login", '/login', method: :get
+= button_to "Sign up", '/users/new', method: :get
