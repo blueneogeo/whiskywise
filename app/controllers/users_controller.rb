@@ -11,13 +11,13 @@ class UsersController < ApplicationController
     @user = User.create(
       params
         .require_typed(:user, TA[ActionController::Parameters].new)
-        .permit(:username)
+        .permit(:username, :password)
     )
 
     session[:user_id] = @user.id
 
     @user = 10
 
-    redirect_to '/welcome'
+    redirect_to '/'
   end
 end

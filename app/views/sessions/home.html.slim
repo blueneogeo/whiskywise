@@ -1,0 +1,12 @@
+h1 Welcome
+
+- if @presenter.logged_in?
+  h1 
+    | You are logged in as
+    =< @presenter.current_user.username
+
+- if @presenter.logged_in?
+  = button_to "Log out", '/logout', method: :get
+- else
+  = button_to "Log in", '/login', method: :get
+  = button_to "Sign up", '/users/new', method: :get

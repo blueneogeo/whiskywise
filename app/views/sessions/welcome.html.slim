@@ -1,8 +1,0 @@
-h1 Welcome
-
-- if @presenter.logged_in?
-  h1 You are logged in as
-    = @presenter.current_user.username
-
-= button_to "Login", '/login', method: :get
-= button_to "Sign up", '/users/new', method: :get
