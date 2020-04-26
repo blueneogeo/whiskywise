@@ -4,9 +4,11 @@
 
 # present the application, usually extended by individual controller views
 class ApplicationPresenter
+  extend T::Sig
+
   sig { params(controller: ApplicationController).void }
   def initialize(controller)
-    @controller = T.let(controller, ApplicationController)
+    @controller = controller
   end
 
   def current_user

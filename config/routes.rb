@@ -2,7 +2,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'page#index'
+  root 'sessions#welcome'
   get 'about', to: 'page#about'
 
   resources :users, only: %i[new create]

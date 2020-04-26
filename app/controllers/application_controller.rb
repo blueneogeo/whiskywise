@@ -4,10 +4,12 @@
 
 # the controller that is the base for all controllers in the application
 class ApplicationController < ActionController::Base
-  before_action :authorize
+  extend T::Sig
 
-  def initialize
-    @presenter = ::ApplicationPresenter.new(self)
+  before_action :init_presenter, :authorize
+
+  def init_presenter
+    @presenter = ApplicationPresenter.new(self)
   end
 
   sig { returns(T.nilable(User)) }

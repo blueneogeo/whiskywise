@@ -3,6 +3,8 @@
 
 # static page controller
 class PageController < ApplicationController
+  extend T::Sig
+
   def initialize
     super
     @users = T.let(%w[Roy Lukasz Christian], T::Array[String])
@@ -11,11 +13,7 @@ class PageController < ApplicationController
     @selfy = T.let(self, PageController)
   end
 
-  # sig { returns(T.nilable(User)) }
-  def index
-    user_or_nil = User.find_by(name: 'test')
-    @first_name = user_or_nil.first_name unless user_or_nil.nil?
-  end
+  def index; end
 
   def about; end
 end

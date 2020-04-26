@@ -56,6 +56,13 @@ module GeneratedUrlHelpers
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def welcome_url(*args, **kwargs); end
 
+  # Sigs for route /authorized(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def authorized_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def authorized_url(*args, **kwargs); end
+
   # Sigs for route /rails/action_mailbox/mandrill/inbound_emails(.:format)
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def rails_mandrill_inbound_emails_path(*args, **kwargs); end

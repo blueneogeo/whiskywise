@@ -1,6 +1,6 @@
 h1 Sign up
 
-= form_for @user do |f|
+= form_for :user, method: 'users#create' do |f|
 
   = f.label :username
   br

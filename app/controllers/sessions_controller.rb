@@ -4,7 +4,9 @@
 
 # handles user sessions
 class SessionsController < ApplicationController
-  skip_before_action :authorized, only: %i[new create welcome]
+  extend T::Sig
+
+  skip_before_action :authorize, only: %i[new create welcome]
 
   def create
     @user = User.find_by(username: params[:username])
