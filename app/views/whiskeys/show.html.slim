@@ -1,0 +1,22 @@
+p#notice= notice
+p
+  strong User:
+  = @whiskey.user_id
+p
+  strong Name:
+  = @whiskey.name
+p
+  strong Description:
+  = @whiskey.description
+p
+  strong Rate taste:
+  = @whiskey.rate_taste
+p
+  strong Rate color:
+  = @whiskey.rate_color
+p
+  strong Rate smokey:
+  = @whiskey.rate_smokey
+=> link_to 'Edit', edit_whiskey_path(@whiskey)
+| |
+=< link_to 'Back', whiskeys_path

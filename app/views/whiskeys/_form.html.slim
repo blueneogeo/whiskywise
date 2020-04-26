@@ -1,0 +1,29 @@
+= form_with(model: whiskey, local: true) do |form|
+  - if whiskey.errors.any?
+    #error_explanation
+      h2
+        = pluralize(whiskey.errors.count, "error")
+        | prohibited this whiskey from being saved:
+      ul
+        - whiskey.errors.full_messages.each do |message|
+          li= message
+  .field
+    = form.label :user_id
+    = form.text_field :user_id
+  .field
+    = form.label :name
+    = form.text_field :name
+  .field
+    = form.label :description
+    = form.text_area :description
+  .field
+    = form.label :rate_taste
+    = form.number_field :rate_taste
+  .field
+    = form.label :rate_color
+    = form.number_field :rate_color
+  .field
+    = form.label :rate_smokey
+    = form.number_field :rate_smokey
+  .actions
+    = form.submit

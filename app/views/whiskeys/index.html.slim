@@ -1,0 +1,26 @@
+p#notice= notice
+h1 Whiskeys
+table
+  thead
+    tr
+      th User
+      th Name
+      th Description
+      th Rate taste
+      th Rate color
+      th Rate smokey
+      th colspan="3" 
+  tbody
+    - @whiskeys.each do |whiskey|
+      tr
+        td= whiskey.user_id
+        td= whiskey.name
+        td= whiskey.description
+        td= whiskey.rate_taste
+        td= whiskey.rate_color
+        td= whiskey.rate_smokey
+        td= link_to 'Show', whiskey
+        td= link_to 'Edit', edit_whiskey_path(whiskey)
+        td= link_to 'Destroy', whiskey, method: :delete, data: { confirm: 'Are you sure?' }  
+br
+= link_to 'New Whiskey', new_whiskey_path
