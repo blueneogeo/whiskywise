@@ -1,30 +1,37 @@
+# frozen_string_literal: true
+
+# typed: true
+
+# Manage whiskey ratings.
+# Note: assumes that the ApplicationController.current_user is valid
 class WhiskeysController < ApplicationController
-  before_action :set_whiskey, only: [:show, :edit, :update, :destroy]
+  extend T::Sig
+
+  before_action :set_whiskey, only: %i[show edit update destroy]
 
   # GET /whiskeys
   # GET /whiskeys.json
   def index
-    @whiskeys = Whiskey.all
+    @whiskeys = Whiskey.where(user_id: T.must(current_user).id)
   end
 
   # GET /whiskeys/1
   # GET /whiskeys/1.json
-  def show
-  end
+  def show; end
 
   # GET /whiskeys/new
   def new
-    @whiskey = Whiskey.new
+    @whiskey = Whiskey.new(user_id: T.must(current_user).id)
   end
 
   # GET /whiskeys/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /whiskeys
   # POST /whiskeys.json
   def create
     @whiskey = Whiskey.new(whiskey_params)
+    validate_whiskey
 
     respond_to do |format|
       if @whiskey.save
@@ -61,14 +68,35 @@ class WhiskeysController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_whiskey
-      @whiskey = Whiskey.find(params[:id])
-    end
+  # get the users who rated a given whiskey
+  sig { params(whiskey: Whiskey).returns(User::ActiveRecord_Relation) }
+  def get_users(whiskey)
+    User.where(id: whiskey.user.id)
+  end
 
-    # Only allow a list of trusted parameters through.
-    def whiskey_params
-      params.require(:whiskey).permit(:user_id, :name, :description, :rate_taste, :rate_color, :rate_smokey)
-    end
+  private
+
+  # throw an error if the whiskey_user is not the current_user
+  def validate_whiskey
+    raise 'Not the logged in user' if @whiskey.user_id != T.must(current_user).id
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_whiskey
+    @whiskey = Whiskey.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def whiskey_params
+    params
+      .require_typed(:whiskey, TA[ActionController::Parameters].new)
+      .permit(
+        :user_id,
+        :name,
+        :description,
+        :rate_taste,
+        :rate_color,
+        :rate_smokey
+      )
+  end
 end

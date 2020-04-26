@@ -6,7 +6,7 @@
 class SessionsController < ApplicationController
   extend T::Sig
 
-  skip_before_action :authorize, only: %i[new create welcome]
+  skip_before_action :authorize, only: %i[home new create welcome]
 
   def create
     @user = User.find_by(username: params[:username])

@@ -1,0 +1,99 @@
+Layout/ArgumentAlignment:
+  Exclude:
+    - "bin/webpack"
+    - "bin/webpack-dev-server"
+
+Layout/EmptyLineAfterGuardClause:
+  Exclude:
+    - "bin/bundle"
+
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - "db/schema.rb"
+
+Layout/MultilineOperationIndentation:
+  Exclude:
+    - "bin/bundle"
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Exclude:
+    - "config/environments/production.rb"
+
+Metrics/AbcSize:
+  Max: 17
+
+Metrics/CyclomaticComplexity:
+  Max: 8
+
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/PerceivedComplexity:
+  Max: 8
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - "test/channels/application_cable/connection_test.rb"
+    - "test/test_helper.rb"
+
+Style/Documentation:
+  Exclude:
+    - "spec/**/*"
+    - "test/**/*"
+    - "config/application.rb"
+    - "db/migrate/20200426171406_create_whiskeys.rb"
+
+Style/ExpandPathArguments:
+  Exclude:
+    - "bin/bundle"
+    - "bin/rails"
+    - "bin/rake"
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/NumericLiterals:
+  Exclude:
+    - "db/schema.rb"
+
+Style/PerlBackrefs:
+  Exclude:
+    - "bin/bundle"
+
+Style/RedundantBegin:
+  Exclude:
+    - "bin/yarn"
+
+Style/SpecialGlobalVars:
+  EnforcedStyle: use_perl_names
+
+Style/StderrPuts:
+  Exclude:
+    - "bin/yarn"
+
+Style/StringLiterals:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 150
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: false
+
+Lint/RaiseException:
+  Enabled: false
+
+Lint/StructNewOverride:
+  Enabled: false
+
+Style/ExponentialNotation:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: false
+
+Style/HashTransformKeys:
+  Enabled: false
+
+Style/HashTransformValues:
+  Enabled: false

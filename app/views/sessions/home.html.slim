@@ -10,3 +10,8 @@ h1 Welcome
 - else
   = button_to "Log in", '/login', method: :get
   = button_to "Sign up", '/users/new', method: :get
+
+- if @presenter.logged_in?
+  = link_to 'Show whiskeys', '/whiskeys', method: :get
+- else
+  p please log in

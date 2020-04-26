@@ -2,7 +2,7 @@
 
 # typed: true
 
-# present the application, usually extended by individual controller views
+# the root application presenter, extended by other presenters
 class ApplicationPresenter
   extend T::Sig
 
