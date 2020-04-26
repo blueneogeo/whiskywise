@@ -14,6 +14,34 @@ class ActionMailer::Base
 end
 
 module GeneratedUrlHelpers
+  # Sigs for route /whiskeys(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def whiskeys_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def whiskeys_url(*args, **kwargs); end
+
+  # Sigs for route /whiskeys/new(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def new_whiskey_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def new_whiskey_url(*args, **kwargs); end
+
+  # Sigs for route /whiskeys/:id/edit(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def edit_whiskey_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def edit_whiskey_url(*args, **kwargs); end
+
+  # Sigs for route /whiskeys/:id(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def whiskey_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def whiskey_url(*args, **kwargs); end
+
   # Sigs for route /
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def root_path(*args, **kwargs); end
@@ -21,12 +49,19 @@ module GeneratedUrlHelpers
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def root_url(*args, **kwargs); end
 
-  # Sigs for route /about(.:format)
+  # Sigs for route /login(.:format)
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def about_path(*args, **kwargs); end
+  def login_path(*args, **kwargs); end
 
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def about_url(*args, **kwargs); end
+  def login_url(*args, **kwargs); end
+
+  # Sigs for route /logout(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def logout_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def logout_url(*args, **kwargs); end
 
   # Sigs for route /users(.:format)
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
@@ -41,27 +76,6 @@ module GeneratedUrlHelpers
 
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def new_user_url(*args, **kwargs); end
-
-  # Sigs for route /login(.:format)
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def login_path(*args, **kwargs); end
-
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def login_url(*args, **kwargs); end
-
-  # Sigs for route /welcome(.:format)
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def welcome_path(*args, **kwargs); end
-
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def welcome_url(*args, **kwargs); end
-
-  # Sigs for route /authorized(.:format)
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def authorized_path(*args, **kwargs); end
-
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def authorized_url(*args, **kwargs); end
 
   # Sigs for route /rails/action_mailbox/mandrill/inbound_emails(.:format)
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }

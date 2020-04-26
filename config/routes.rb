@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :whiskeys
   root 'sessions#home'
 
   get 'login', to: 'sessions#new'

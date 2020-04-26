@@ -56,6 +56,16 @@ module User::GeneratedAttributeMethods
   def username?; end
 end
 
+module User::GeneratedAssociationMethods
+  extend T::Sig
+
+  sig { returns(::Whiskey::ActiveRecord_Associations_CollectionProxy) }
+  def whiskeys; end
+
+  sig { params(value: T::Enumerable[::Whiskey]).void }
+  def whiskeys=(value); end
+end
+
 module User::CustomFinderMethods
   sig { params(limit: Integer).returns(T::Array[User]) }
   def first_n(limit); end
@@ -75,6 +85,7 @@ end
 
 class User < ApplicationRecord
   include User::GeneratedAttributeMethods
+  include User::GeneratedAssociationMethods
   extend User::CustomFinderMethods
   extend T::Sig
   extend T::Generic

@@ -4,4 +4,5 @@
 # a user of our application who represents an account
 class User < ApplicationRecord
   has_secure_password
+  has_many :whiskeys
 end
