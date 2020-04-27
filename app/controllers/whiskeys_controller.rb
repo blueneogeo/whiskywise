@@ -68,13 +68,41 @@ class WhiskeysController < ApplicationController
     end
   end
 
-  # get the users who rated a given whiskey
-  sig { params(whiskey: Whiskey).returns(User::ActiveRecord_Relation) }
-  def get_users(whiskey)
-    User.where(id: whiskey.user.id)
+  # find all whiskeys given some parameters
+  # GET /whiskeys/search.json?contains=&taste=&color=&smokey=
+  sig { void }
+  def search
+    @whiskeys = search_whiskey(
+      T.must(current_user),
+      contains: params[:contains] && params[:contains].to_s,
+      taste: params[:taste] && params[:taste].to_i,
+      color: params[:color] && params[:color].to_i,
+      smokey: params[:smokey] && params[:smokey].to_i
+    )
   end
 
   private
+
+  # this method should be a Whiskey concern, but could not get that to work,
+  # so it is here for now
+  sig do
+    params(
+      user: User,
+      contains: T.nilable(String),
+      taste: T.nilable(Integer),
+      color: T.nilable(Integer),
+      smokey: T.nilable(Integer)
+    )
+      .returns(T.nilable(Whiskey::ActiveRecord_Relation))
+  end
+  def search_whiskey(user, contains: nil, taste: nil, color: nil, smokey: nil)
+    whiskeys = Whiskey.where user_id: user.id
+    whiskeys = whiskeys.where 'name LIKE :name', name: "%#{contains}%" if contains
+    whiskeys = whiskeys.where 'rate_taste >= :taste', taste: taste if taste
+    whiskeys = whiskeys.where 'rate_color >= :color', color: color if color
+    whiskeys = whiskeys.where 'rate_smokey >= :smokey', smokey: smokey if smokey
+    whiskeys
+  end
 
   # throw an error if the whiskey_user is not the current_user
   def validate_whiskey

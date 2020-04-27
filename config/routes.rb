@@ -2,7 +2,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :whiskeys
   root 'sessions#home'
 
   get 'login', to: 'sessions#new'
@@ -10,4 +9,7 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy'
 
   resources :users, only: %i[new create]
+
+  resources :whiskeys
+  get 'search', to: 'whiskeys#search'
 end
