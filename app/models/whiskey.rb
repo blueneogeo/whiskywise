@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# typed: true
+# typed: strong
 
 # a single whiskey rating record
 class Whiskey < ApplicationRecord

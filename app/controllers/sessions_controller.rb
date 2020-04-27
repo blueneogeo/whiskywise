@@ -27,6 +27,4 @@ class SessionsController < ApplicationController
   def login; end
 
   def home; end
-
-  def page_requires_login; end
 end

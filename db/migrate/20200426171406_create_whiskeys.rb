@@ -1,3 +1,4 @@
+# typed: true
 class CreateWhiskeys < ActiveRecord::Migration[6.0]
   def change
     create_table :whiskeys do |t|

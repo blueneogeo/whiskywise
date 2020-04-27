@@ -3429,8 +3429,8 @@ class ActionDispatch::IntegrationTest < ActiveSupport::TestCase
   include ActionDispatch::IntegrationTest::UrlOptions
   include ActionDispatch::Routing::UrlFor
   include ActionDispatch::TestProcess::FixtureFile
-  include ActionMailer::TestCase::ClearTestDeliveries
-  include ActionMailer::TestHelper
+  # include ActionMailer::TestCase::ClearTestDeliveries
+  # include ActionMailer::TestHelper
   include ActiveJob::TestHelper
 end
 module ActionDispatch::IntegrationTest::UrlOptions

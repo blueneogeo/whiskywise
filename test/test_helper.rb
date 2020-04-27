@@ -12,3 +12,24 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+require 'capybara/rails'
+require 'capybara/minitest'
+require 'capybara/minitest/spec'
+
+# Make the Capybara DSL available in all integration tests
+class ActionDispatch::IntegrationTest
+  include Capybara::DSL
+  include Capybara::Node::Matchers
+  include Capybara::Minitest::Assertions
+
+  setup do
+    Capybara.default_driver = :selenium_chrome_headless
+  end
+
+  # Reset sessions and driver between tests
+  teardown do
+    Capybara.reset_sessions!
+    Capybara.use_default_driver
+  end
+end
