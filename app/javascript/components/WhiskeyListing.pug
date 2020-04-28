@@ -1,24 +1,20 @@
 
-section
+nav.bg-gray-100.px-12.flex.justify-between.items-center
 
-  h1 filters
+  input(defaultValue=containsValue onChange=onContainsChange)(placeholder="search").w-48.pl-5.h-9
 
-  label contains
-  input(defaultValue=containsValue onChange=onContainsChange)
+  label.ml-3.mr-2 smokey:
+  input(defaultValue=smokeyValue onChange=onSmokeyChange)(type="number" placeholder="filter 1-5").w-24.p-1.h-9
 
-  label smokey
-  input(defaultValue=smokeyValue onChange=onSmokeyChange)
+  label.ml-3.mr-2 taste:
+  input(defaultValue=tasteValue onChange=onTasteChange)(type="number" placeholder="filter 1-5").w-24.p-1.h-9
 
-  label taste
-  input(defaultValue=tasteValue onChange=onTasteChange)
+  label.ml-3.mr-2 color:
+  input(defaultValue=colorValue onChange=onColorChange)(type="number" placeholder="filter 1-5").w-24.p-1.h-9
 
-  label color
-  input(defaultValue=colorValue onChange=onColorChange)
+  button(onClick=onNewWhiskeyClick).px-6.py-2.bg-yellow-300.text-white.rounded-md.my-2 Add Whiskey
 
-section
+.container.px-12
 
-  h1 Found these whiskeys:
-
-  ul
-    li(@repeat='whiskeys as whiskey')
+  div(@repeat='whiskeys as whiskey')
       WhiskeyEntry(whiskey=whiskey onClick=onWhiskeyClick onDelete=onWhiskeyDelete)

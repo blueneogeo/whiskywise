@@ -9,6 +9,7 @@ import _, { debounce } from 'lodash';
 
 interface Props {
   baseUrl?: string
+  new_whiskey_url: string
 }
 
 interface State {
@@ -43,6 +44,7 @@ export default class WhiskeyListing extends React.Component<Props, State> {
       tasteValue: this.state.taste,
       colorValue: this.state.color,
 
+      onNewWhiskeyClick: this.onNewWhiskeyClick,
       onWhiskeyClick: this.onWhiskeyClick,
       onWhiskeyDelete: this.onWhiskeyDelete,
       onContainsChange: debounce(this.onContainsChange, 150, { leading: true, trailing: false, maxWait: 250 }),
@@ -52,6 +54,10 @@ export default class WhiskeyListing extends React.Component<Props, State> {
 
       WhiskeyEntry
     })
+  }
+
+  @boundMethod onNewWhiskeyClick() {
+    window.location.href = this.props.new_whiskey_url
   }
 
   @boundMethod onWhiskeyClick(whiskey: Whiskey) {
@@ -72,6 +78,7 @@ export default class WhiskeyListing extends React.Component<Props, State> {
   }
 
   @boundMethod async onSmokeyChange(event: React.SyntheticEvent<HTMLInputElement>) {
+    console.log('HEY!')
     event.persist()
     const value = event.currentTarget.value
     await update(this, state => state.smokey = parseInt(value))
