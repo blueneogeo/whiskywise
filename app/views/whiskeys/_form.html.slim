@@ -1,29 +1,63 @@
-= form_with(model: whiskey, local: true) do |form|
-  - if whiskey.errors.any?
-    #error_explanation
-      h2
-        = pluralize(whiskey.errors.count, "error")
-        | prohibited this whiskey from being saved:
-      ul
-        - whiskey.errors.full_messages.each do |message|
-          li= message
-  .field
-    = form.label :user_id
-    = form.text_field :user_id
-  .field
-    = form.label :name
-    = form.text_field :name
-  .field
-    = form.label :description
-    = form.text_area :description
-  .field
-    = form.label :rate_taste
-    = form.number_field :rate_taste
-  .field
-    = form.label :rate_color
-    = form.number_field :rate_color
-  .field
-    = form.label :rate_smokey
-    = form.number_field :rate_smokey
-  .actions
-    = form.submit
+/ = form_with(model: whiskey, local: true) do |form|
+/   - if whiskey.errors.any?
+/     #error_explanation
+/       h2
+/         = pluralize(whiskey.errors.count, "error")
+/         | prohibited this whiskey from being saved:
+/       ul
+/         - whiskey.errors.full_messages.each do |message|
+/           li= message
+/   .field
+/     = form.label :user_id
+/     = form.text_field :user_id
+/   .field
+/     = form.label :name
+/     = form.text_field :name
+/   .field
+/     = form.label :description
+/     = form.text_area :description
+/   .field
+/     = form.label :rate_taste
+/     = form.number_field :rate_taste
+/   .field
+/     = form.label :rate_color
+/     = form.number_field :rate_color
+/   .field
+/     = form.label :rate_smokey
+/     = form.number_field :rate_smokey
+/   .actions
+/     = form.submit
+
+.leading-loose
+  = form_with(model: whiskey, local: true, class: 'max-w-xl m-4 p-10 bg-white rounded shadow-xl') do |form|
+    - if whiskey.errors.any?
+      #error_explanation
+        h2
+          = pluralize(whiskey.errors.count, "error")
+          | prohibited this whiskey from being saved:
+        ul
+          - whiskey.errors.full_messages.each do |message|
+            li= message
+
+    p.text-gray-800.font-medium
+      | New Whiskey
+    = form.hidden_field :user_id
+    .mt-2
+      = form.label :name, class: 'label block text-sm text-gray-00'
+      = form.text_field :name, class: 'w-full px-5 py-1 text-gray-700 bg-gray-200 rounded'
+    .mt-2
+      = form.label :description, class: 'label block text-sm text-gray-00'
+      = form.text_area :description, placeholder: 'How did you like this whiskey?', class: 'w-full px-5 py-1 text-gray-700 bg-gray-200 rounded'
+    .mt-2
+      = form.label :rate_taste, class: 'label block text-sm text-gray-00'
+      = form.number_field :rate_taste, placeholder: 'rate 1 to 5', class: 'w-full px-5 py-1 text-gray-700 bg-gray-200 rounded'
+    .mt-2
+      = form.label :rate_color, class: 'label block text-sm text-gray-00'
+      = form.number_field :rate_color, placeholder: 'rate 1 to 5', class: 'w-full px-5 py-1 text-gray-700 bg-gray-200 rounded'
+    .mt-2
+      = form.label :rate_smokey, class: 'label block text-sm text-gray-00'
+      = form.number_field :rate_smokey, placeholder: 'rate 1 to 5', class: 'w-full px-5 py-1 text-gray-700 bg-gray-200 rounded'
+    .mt-4
+      = form.submit 'Add this Whiskey', class: 'px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded'
+      / button.px-4.py-1.text-white.font-light.tracking-wider.bg-gray-900.rounded[type="submit"]
+      /   | $3.00
