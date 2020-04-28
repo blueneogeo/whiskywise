@@ -1,17 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user: one
-  name: MyString
-  description: MyText
-  rate_taste: 1
-  rate_color: 1
-  rate_smokey: 1
+  user: john
+  name: Red Snapper
+  description: It's great!
+  rate_taste: 5
+  rate_color: 4
+  rate_smokey: 3
 
 two:
-  user: two
-  name: MyString
-  description: MyText
+  user: john
+  name: Russian Pain
+  description: Really bad
   rate_taste: 1
-  rate_color: 1
+  rate_color: 2
   rate_smokey: 1

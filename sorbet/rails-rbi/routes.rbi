@@ -14,34 +14,6 @@ class ActionMailer::Base
 end
 
 module GeneratedUrlHelpers
-  # Sigs for route /whiskeys(.:format)
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def whiskeys_path(*args, **kwargs); end
-
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def whiskeys_url(*args, **kwargs); end
-
-  # Sigs for route /whiskeys/new(.:format)
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def new_whiskey_path(*args, **kwargs); end
-
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def new_whiskey_url(*args, **kwargs); end
-
-  # Sigs for route /whiskeys/:id/edit(.:format)
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def edit_whiskey_path(*args, **kwargs); end
-
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def edit_whiskey_url(*args, **kwargs); end
-
-  # Sigs for route /whiskeys/:id(.:format)
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def whiskey_path(*args, **kwargs); end
-
-  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
-  def whiskey_url(*args, **kwargs); end
-
   # Sigs for route /
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def root_path(*args, **kwargs); end
@@ -76,6 +48,41 @@ module GeneratedUrlHelpers
 
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def new_user_url(*args, **kwargs); end
+
+  # Sigs for route /whiskeys(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def whiskeys_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def whiskeys_url(*args, **kwargs); end
+
+  # Sigs for route /whiskeys/new(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def new_whiskey_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def new_whiskey_url(*args, **kwargs); end
+
+  # Sigs for route /whiskeys/:id/edit(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def edit_whiskey_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def edit_whiskey_url(*args, **kwargs); end
+
+  # Sigs for route /whiskeys/:id(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def whiskey_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def whiskey_url(*args, **kwargs); end
+
+  # Sigs for route /search(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def search_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def search_url(*args, **kwargs); end
 
   # Sigs for route /rails/action_mailbox/mandrill/inbound_emails(.:format)
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
