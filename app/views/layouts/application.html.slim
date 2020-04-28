@@ -1,10 +1,21 @@
 doctype html
 html
-  head
-    title Whiskywise
-    = csrf_meta_tags
-    = csp_meta_tag
-    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', 'data-turbolinks-suppress-warning': true
-  body
-    = yield
+	head
+		title Whiskywise
+		= csrf_meta_tags
+		= csp_meta_tag
+		= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+		= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', 'data-turbolinks-suppress-warning': true
+	body.font-sans.bg-gray-200
+
+		nav.bg-gray-800.px-12.text-white.flex.justify-between.-ml-3
+			= image_tag("logo.png", :alt => "Whiskey Wise")
+			.flex.my-auto.text-base.text-gray-400
+				- if @presenter.logged_in?
+					= link_to "Log out", '/logout', class: 'px-3 py-2 rounded-md bg-gray-700'
+				- else
+					= link_to "Log in", '/login', class: 'px-3 py-2 rounded-md bg-gray-700'
+					= link_to "Sign up", '/users/new', class: 'ml-3 px-3 py-2 rounded-md bg-gray-700'
+
+		.container.px-12
+			= yield

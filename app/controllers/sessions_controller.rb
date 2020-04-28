@@ -26,5 +26,9 @@ class SessionsController < ApplicationController
 
   def login; end
 
-  def home; end
+  def home
+    redirect_to '/welcome' unless logged_in?
+  end
+
+  def welcome; end
 end
