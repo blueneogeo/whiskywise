@@ -11,6 +11,8 @@ h1 Welcome
   = button_to "Log in", '/login', method: :get
   = button_to "Sign up", '/users/new', method: :get
 
+hr
+
 - if @presenter.logged_in?
   = link_to 'Add a whiskey', '/whiskeys/new', method: :get
 
