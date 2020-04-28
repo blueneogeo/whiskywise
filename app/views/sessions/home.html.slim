@@ -12,6 +12,9 @@ h1 Welcome
   = button_to "Sign up", '/users/new', method: :get
 
 - if @presenter.logged_in?
-  = link_to 'Show whiskeys', '/whiskeys', method: :get
+  = link_to 'Add a whiskey', '/whiskeys/new', method: :get
+
+  = react_component("WhiskeyListing", {})
+
 - else
   p please log in

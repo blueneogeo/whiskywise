@@ -35,7 +35,7 @@ class WhiskeysController < ApplicationController
 
     respond_to do |format|
       if @whiskey.save
-        format.html { redirect_to @whiskey, notice: 'Whiskey was successfully created.' }
+        format.html { redirect_to '/', notice: 'Whiskey was successfully created.' }
         format.json { render :show, status: :created, location: @whiskey }
       else
         format.html { render :new }

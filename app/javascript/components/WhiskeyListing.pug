@@ -1,0 +1,24 @@
+
+section
+
+  h1 filters
+
+  label contains
+  input(defaultValue=containsValue onChange=onContainsChange)
+
+  label smokey
+  input(defaultValue=smokeyValue onChange=onSmokeyChange)
+
+  label taste
+  input(defaultValue=tasteValue onChange=onTasteChange)
+
+  label color
+  input(defaultValue=colorValue onChange=onColorChange)
+
+section
+
+  h1 Found these whiskeys:
+
+  ul
+    li(@repeat='whiskeys as whiskey')
+      WhiskeyEntry(whiskey=whiskey onClick=onWhiskeyClick onDelete=onWhiskeyDelete)

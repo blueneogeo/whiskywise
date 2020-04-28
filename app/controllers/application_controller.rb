@@ -6,6 +6,7 @@
 class ApplicationController < ActionController::Base
   extend T::Sig
 
+  skip_before_action :verify_authenticity_token
   before_action :init_presenter, :authorize
 
   def init_presenter
