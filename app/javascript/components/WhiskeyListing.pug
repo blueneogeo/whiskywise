@@ -3,18 +3,21 @@ nav.bg-gray-100.px-12.flex.justify-between.items-center
 
   input(defaultValue=containsValue onChange=onContainsChange)(placeholder="search").w-48.pl-5.h-9
 
-  label.ml-3.mr-2 smokey:
-  input(defaultValue=smokeyValue onChange=onSmokeyChange)(type="number" placeholder="filter 1-5").w-24.p-1.h-9
+  .taste
+    label.ml-3.mr-2 taste:
+    input(defaultValue=tasteValue onChange=onTasteChange)(type="number" placeholder="filter 1-5").w-24.p-1.h-9
 
-  label.ml-3.mr-2 taste:
-  input(defaultValue=tasteValue onChange=onTasteChange)(type="number" placeholder="filter 1-5").w-24.p-1.h-9
+  .color
+    label.ml-3.mr-2 color:
+    input(defaultValue=colorValue onChange=onColorChange)(type="number" placeholder="filter 1-5").w-24.p-1.h-9
 
-  label.ml-3.mr-2 color:
-  input(defaultValue=colorValue onChange=onColorChange)(type="number" placeholder="filter 1-5").w-24.p-1.h-9
+  .smokey
+    label.ml-3.mr-2 smokey:
+    input(defaultValue=smokeyValue onChange=onSmokeyChange)(type="number" placeholder="filter 1-5").w-24.p-1.h-9
 
   button(onClick=onNewWhiskeyClick).px-6.py-2.bg-yellow-300.text-white.rounded-md.my-2 Add Whiskey
 
-.container.px-12
+section.px-12.flex.flex-wrap
 
-  div(@repeat='whiskeys as whiskey')
-      WhiskeyEntry(whiskey=whiskey onClick=onWhiskeyClick onDelete=onWhiskeyDelete)
+  div(@repeat='whiskeys as whiskey, i').mr-2
+    WhiskeyEntry(index=i whiskey=whiskey onClick=onWhiskeyClick onDelete=onWhiskeyDelete)

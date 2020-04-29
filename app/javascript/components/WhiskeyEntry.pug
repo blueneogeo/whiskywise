@@ -1,20 +1,15 @@
-hr
-div
-  h3 whiskey: { whiskey.name }
-  p
-    i { whiskey.description }
-  p taste: { whiskey.rate_taste }
-  p color: { whiskey.rate_color }
-  p smokiness: { whiskey.rate_smokey }
-  button(onClick=onDelete) delete
-
-.md_flex
-  .md_flex-shrink-0
-    img(src='https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80').rounded-lg.md_w-56
-  .mt-4.md_mt-0.md_ml-6
-    .uppercase.tracking-wide.text-sm.text-indigo-600.font-bold
-      | Marketing
-    a(href='#').block.mt-1.text-lg.leading-tight.font-semibold.text-gray-900.hover_underline
-      | Finding customers for your new business
-    p.mt-2.text-gray-600
-      | Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.
+.bg-gray-50.p-5.rounded.mt-4.mr-2.shadow-xl(style={'width': '400px'})
+  div
+    img(src=imageUrl).rounded.bg-strech.bg-cover.h-64.bg-center
+  div
+    //- .uppercase.tracking-wide.text-sm.text-indigo-600.font-bold
+    //-   | Marketing
+    a(href='#').block.mt-4.text-lg.leading-tight.font-semibold.text-gray-900.hover_underline
+      |  { whiskey.name }
+    p.mt-2.text-gray-600.h-14
+      | { whiskey.description }
+    .flex.justify-left.flex-wrap.mt-4.text-sm.-mb-2
+      .bg-gray-200.px-3.mb-2.py-1.mr-3.sm_text-xs.rounded.whitespace-no-wrap taste: { whiskey.rate_taste }
+      .bg-gray-200.px-3.mb-2.py-1.mr-3.sm_text-xs.rounded.whitespace-no-wrap color: { whiskey.rate_color }
+      .bg-gray-200.px-3.mb-2.py-1.mr-3.sm_text-xs.rounded.whitespace-no-wrap smokey: { whiskey.rate_smokey }
+      button(onClick=onDelete).text-white.bg-yellow-300.hover_bg-yellow-400.px-3.mb-2.py-1.rounded Delete
