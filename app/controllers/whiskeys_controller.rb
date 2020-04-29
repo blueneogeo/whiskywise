@@ -97,7 +97,7 @@ class WhiskeysController < ApplicationController
   end
   def search_whiskey(user, contains: nil, taste: nil, color: nil, smokey: nil)
     whiskeys = Whiskey.where user_id: user.id
-    whiskeys = whiskeys.where 'name LIKE :name', name: "%#{contains}%" if contains
+    whiskeys = whiskeys.where 'LOWER(name) LIKE :name', name: "%#{contains}%" if contains
     whiskeys = whiskeys.where 'rate_taste >= :taste', taste: taste if taste
     whiskeys = whiskeys.where 'rate_color >= :color', color: color if color
     whiskeys = whiskeys.where 'rate_smokey >= :smokey', smokey: smokey if smokey

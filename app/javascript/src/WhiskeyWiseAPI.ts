@@ -9,7 +9,7 @@ export class WhiskeyWiseAPI {
 
   async search(options?: SearchOptions): Promise<Whiskey[]> {
     const params: string[] = []
-    if (options && options.contains) params.push(`contains=${options.contains}`)
+    if (options && options.contains) params.push(`contains=${options.contains.toLowerCase()}`)
     if (options && options.color) params.push(`color=${options.color}`)
     if (options && options.smokey) params.push(`smokey=${options.smokey}`)
     if (options && options.taste) params.push(`taste=${options.taste}`)
