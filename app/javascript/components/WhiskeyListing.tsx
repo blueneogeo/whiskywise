@@ -78,7 +78,6 @@ export default class WhiskeyListing extends React.Component<Props, State> {
   }
 
   @boundMethod async onSmokeyChange(event: React.SyntheticEvent<HTMLInputElement>) {
-    console.log('HEY!')
     event.persist()
     const value = event.currentTarget.value
     await update(this, state => state.smokey = parseInt(value))

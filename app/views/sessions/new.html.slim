@@ -1,4 +1,4 @@
-.cover(style="height: 100vh; background-image: url(/assets/bar-glass.jpg); background-size: cover;")
+.bg-cover(style="height: 100vh; background-image: url(/assets/bar-glass.jpg);")
 
   = form_tag '/login' do
 
@@ -27,6 +27,5 @@
                 required: true,
                 placeholder: 'Password',
               }
-              / input.appearance-none.rounded-none.relative.block.w-full.px-3.py-2.border.border-gray-300.placeholder-gray-500.text-gray-900.rounded-b-md.focus_outline-none.focus_shadow-outline-blue.focus_border-blue-300.focus_z-10.sm_text-sm.sm_leading-5[aria-label="Password" name="password" type="password" required placeholder="Password"]
           .mt-10
             = submit_tag 'Sign in', class: 'group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-yellow-400 hover_bg-indigo-500 focus_outline-none focus_border-indigo-700 focus_shadow-outline-indigo active_bg-indigo-700 transition duration-150 ease-in-out'
