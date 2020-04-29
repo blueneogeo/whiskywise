@@ -16,8 +16,6 @@ class UsersController < ApplicationController
 
     session[:user_id] = @user.id
 
-    @user = 10
-
     redirect_to '/'
   end
 end

@@ -99,7 +99,7 @@ export default class WhiskeyListing extends React.Component<Props, State> {
     this.loadWhiskeys()
   }
 
-  @boundMethod async loadWhiskeys() {
+  async loadWhiskeys() {
     const whiskeys = await this.api.search({
       contains: this.state.contains,
       color: this.state.color,
@@ -109,7 +109,7 @@ export default class WhiskeyListing extends React.Component<Props, State> {
     update(this, state => state.whiskeys = whiskeys)
   }
 
-  @boundMethod async deleteWhiskey(whiskey: Whiskey) {
+  async deleteWhiskey(whiskey: Whiskey) {
     await this.api.deleteWhiskey(whiskey.id)
     await this.loadWhiskeys()
   }
