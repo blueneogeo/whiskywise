@@ -4,7 +4,7 @@ import { Whiskey } from './model';
 export class WhiskeyWiseAPI {
 
   constructor(protected baseURL?: string) {
-    if (!baseURL) this.baseURL = ''
+    this.baseURL = baseURL ? baseURL : ''
   }
 
   async search(options?: SearchOptions): Promise<Whiskey[]> {
