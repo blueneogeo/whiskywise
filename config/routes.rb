@@ -13,4 +13,5 @@ Rails.application.routes.draw do
 
   resources :whiskeys
   get 'search', to: 'whiskeys#search'
+  # resources :search
 end

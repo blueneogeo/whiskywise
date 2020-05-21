@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
     if @user && T.unsafe(@user).authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to '/'
+      redirect_to root_url
     else
       redirect_to '/login'
     end

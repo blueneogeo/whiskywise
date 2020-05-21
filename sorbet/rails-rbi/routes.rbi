@@ -35,6 +35,13 @@ module GeneratedUrlHelpers
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def logout_url(*args, **kwargs); end
 
+  # Sigs for route /welcome(.:format)
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def welcome_path(*args, **kwargs); end
+
+  sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
+  def welcome_url(*args, **kwargs); end
+
   # Sigs for route /users(.:format)
   sig { params(args: T.untyped, kwargs: T.untyped).returns(String) }
   def users_path(*args, **kwargs); end
